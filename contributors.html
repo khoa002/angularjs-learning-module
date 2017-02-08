@@ -1,0 +1,11 @@
+<div>{{error}}</div>
+<h2>{{repoDetails.name}}</h2>
+<div>Open issues: {{repoDetails.open_issues_count}}</div>
+<div>
+    <h3>Contributors:</h3>
+    <div ng-repeat="user in repoDetails.contributors | orderBy:login"
+        style="display: inline-block; float: left; margin: 3%;">
+        <div><img ng-src="{{user.avatar_url}}" title="{{user.name}}" width="150" height="150" /></div>
+        <div style="text-align: center;">{{user.login}}</div>
+    </div>
+</div>
